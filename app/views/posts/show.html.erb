@@ -1,4 +1,8 @@
-<%= @post.title %><br>
-<%= @post.body %><br>
-
-<%= link_to "back", root_path%>
+<div class= 'show_page'>
+    <%= image_tag @post.image.url(:large) %><br>
+    <div id='text_wrapper'>
+        <strong><%= @post.title %></strong><br>
+        <%= @post.body %><br>
+        <%= link_to "back", root_path%>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 <div class='page_wrapper'>
     <div class='side_bar'>
         <img src="assets/logo.jpg" id= "logo">
-        <p>Cras eu commodo purus. Donec finibus ligula a vestibulum eleifend. Donec luctus nulla et erat efficitur sollicitudin. Sed consectetur consequat Nullam tempor dolor gravida laoreet fermentum.
+        <p id= 'blurb'>Cras eu commodo purus. Donec finibus ligula a vestibulum eleifend. Donec luctus nulla et erat efficitur sollicitudin. Sed consectetur consequat Nullam tempor dolor gravida laoreet fermentum.
         </p>
 
         <% if admin_signed_in?%>
@@ -14,10 +14,17 @@
 
     <div class='posts'>
         <% @posts.each do |post| %>
+            <%= link_to post_path(post) do%>
             <div class='post_wrapper'>
-                <h1><%= post.title %></h1>
-                <p><%= post.body %></p>
+                <div id= "post_image">
+                    <%= image_tag post.image.url(:medium) %>
+                </div>
+                <div id="post_text">
+                    <h1><%= post.title %></h1>
+                    <p><%= post.body %></p>
+                </div>    
             </div>
+            <% end %>
         <% end %>
     </div>
 </div>
