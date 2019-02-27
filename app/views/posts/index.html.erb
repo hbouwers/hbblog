@@ -1,12 +1,23 @@
-<div class='side_bar'>
-    <img src="assets/logo.jpg" id= "logo">
-    <p>Cras eu commodo purus. Donec finibus ligula a vestibulum eleifend. Donec luctus nulla et erat efficitur sollicitudin. Sed consectetur consequat Nullam tempor dolor gravida laoreet fermentum.
-    </p>
+<div class='page_wrapper'>
+    <div class='side_bar'>
+        <img src="assets/logo.jpg" id= "logo">
+        <p>Cras eu commodo purus. Donec finibus ligula a vestibulum eleifend. Donec luctus nulla et erat efficitur sollicitudin. Sed consectetur consequat Nullam tempor dolor gravida laoreet fermentum.
+        </p>
 
-    <% if admin_signed_in?%>
-        <p id='admin_btn'><%= link_to 'New Post', new_post_path %>
-        <p id='admin_btn'><%= link_to 'Admin Logout', destroy_admin_session_path %></p>
-    <% else %>
-        <p id='admin_btn'><%= link_to 'Admin Login', new_admin_session_path %></p>
-    <% end %>
+        <% if admin_signed_in?%>
+            <p id='admin_btn'><%= link_to 'New Post', new_post_path %>
+            <p id='admin_btn'><%= link_to 'Admin Logout', destroy_admin_session_path %></p>
+        <% else %>
+            <p id='admin_btn'><%= link_to 'Admin Login', new_admin_session_path %></p>
+        <% end %>
+    </div>
+
+    <div class='posts'>
+        <% @posts.each do |post| %>
+            <div class='post_wrapper'>
+                <h1><%= post.title %></h1>
+                <p><%= post.body %></p>
+            </div>
+        <% end %>
+    </div>
 </div>
