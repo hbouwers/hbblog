@@ -6,7 +6,7 @@
 
         <% if admin_signed_in?%>
             <p id='admin_btn'><%= link_to 'New Post', new_post_path %>
-            <p id='admin_btn'><%= link_to 'Admin Logout', destroy_admin_session_path %></p>
+            <p id='admin_btn'><%= link_to 'Admin Logout', destroy_admin_session_path, method: :delete %></p>
         <% else %>
             <p id='admin_btn'><%= link_to 'Admin Login', new_admin_session_path %></p>
         <% end %>

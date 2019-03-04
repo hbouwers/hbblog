@@ -72,8 +72,8 @@
     border-radius: 25px;
     margin:10px;
     height:180px;
-    overflow: hidden;
     display:flex;
+    overflow: hidden;
     img{
         height:100%;
         width:100%;
@@ -81,6 +81,8 @@
     #post_text{
         padding-left: 10px;
         width:60%;
+        height: 162px;
+        overflow: hidden;
     }
     h1{
         font-size: 20px
