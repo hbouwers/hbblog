@@ -42,6 +42,7 @@
 
 .side_bar{
     min-width: 280px;
+    max-width: 280px;
     height: 450px;
     border: 1px #707070 solid;
     border-radius: 25px;
@@ -96,6 +97,7 @@
     margin: 10px;
     img{
         width:50%;
+        height:fit-content;
     }
     #text_wrapper{
         padding-left:20px;

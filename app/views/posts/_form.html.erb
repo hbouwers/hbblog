@@ -1,15 +1,13 @@
 <%= form_for @post, html: { multipart: true } do |form| %>
+
   <% if @post.errors.any? %>
-    <div id="errors">
-      <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
+    <h3><%= pluralize(@post.errors.count, 'error') %> prevented this post froms saving:</h3>
       <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+        <% @post.errors.full_messages.each do |msg|%>
+          <li><%=msg%></li>
         <% end %>
       </ul>
-    </div>
   <% end %>
-
   <p>
     <%= form.text_field :title, placeholder: 'Title' %>
   </p>

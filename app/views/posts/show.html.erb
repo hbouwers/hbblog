@@ -3,12 +3,19 @@
     <div id='text_wrapper'>
         <strong><%= @post.title %></strong><br>
         <p><%= @post.body %></p><br>
-        <% if signed_in? %>
+        <% if current_user.admin? %>
             <%= link_to 'edit', edit_post_path(@post) %><br>
             <%= link_to 'delete', post_path(@post), method: :delete %><br>
             <%= link_to "back", root_path %>
         <% else %>
             <%= link_to "back", root_path %>
         <% end %>
+        <div id="comments">
+            <h2><%= @post.comments.count %> Comments</h2>
+            <%= render @post.comments %>
+
+            <h3>Add a comment:</h3>
+            <%= render "comments/form" %>
+        </div>
     </div>
 </div>
