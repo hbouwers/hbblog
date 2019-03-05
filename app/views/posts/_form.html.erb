@@ -1,4 +1,13 @@
 <%= form_for @post, html: { multipart: true } do |form| %>
+
+  <% if @post.errors.any? %>
+    <h3><%= pluralize(@post.errors.count, 'error') %> prevented this post froms saving:</h3>
+      <ul>
+        <% @post.errors.full_messages.each do |msg|%>
+          <li><%=msg%></li>
+        <% end %>
+      </ul>
+  <% end %>
   <p>
     <%= form.text_field :title, placeholder: 'Title' %>
   </p>
