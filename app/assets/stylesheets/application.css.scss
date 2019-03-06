@@ -93,17 +93,38 @@
 /* show page*/ 
 
 .show_page{
-    display: flex;
     margin: 10px;
     img{
+        display: block;
         width:50%;
         height:fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
     #text_wrapper{
         padding-left:20px;
     }
     p{
         margin-top: 10px;
+    }
+
+    h2{
+        font-size: 15px;
+        padding: 10px;
+    }
+    .comment_clearfix{
+        margin: 10px 0;
+    }
+    .comment_content{
+        background-color: rgb(222, 236, 241);
+        border-radius: 25px;
+        padding: 20px;
+    }
+    .comment_name{
+        margin: 0;
+    }
+    .comment_time{
+                font-size: 12px;
     }
 }
 
@@ -146,3 +167,4 @@
         height: 250px;
     }
 }
+
